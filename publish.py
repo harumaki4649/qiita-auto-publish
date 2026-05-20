@@ -43,7 +43,26 @@ headers = {
 # 投稿処理
 for article in targets:
     url = f"https://qiita.com/api/v2/items/{article['id']}"
-    res = requests.patch(url, headers=headers, json={"private": False})
+    
+    # 1. 現在の記事の情報をGETで取得する
+    get_res = requests.get(url, headers=headers)
+    if get_res.status_code != 200:
+        print(f"失敗: 記事情報が取得できませんでした (ID: {article['id']}) - {get_res.text}")
+        continue
+        
+    current_data = get_res.json()
+    
+    # 2. 公開に必要なパラメータを組み立てる
+    # (既存のタイトルや本文、タグを引き継ぎつつ、privateをfalseにする)
+    update_payload = {
+        "title": current_data["title"],
+        "body": current_data["body"],
+        "tags": current_data["tags"],
+        "private": False
+    }
+    
+    # 3. PATCHで公開状態に更新する
+    res = requests.patch(url, headers=headers, json=update_payload)
     
     if res.status_code == 200:
         print(f"成功: {article['title']} (ID: {article['id']}) を公開しました。")
