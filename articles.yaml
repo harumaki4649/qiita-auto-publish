@@ -1,4 +1,10 @@
 # articles.yaml
+- id: "a41b582295dc2eedd046"
+  title: "test"
+  publish_at: "2026-05-21-01:10"
+  priority: 1
+  group: "single"
+
 - id: "abcdef1234567890xxxx"
   title: "Gitの使い方"             # メモ用（なくても可）
   publish_at: "2026-05-25 10:00"  # 日本時間(JST)で指定
