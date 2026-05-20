@@ -1,7 +1,7 @@
 # articles.yaml
 - id: "a41b582295dc2eedd046"
   title: "test"
-  publish_at: "2026-05-21-01:10"
+  publish_at: "2026-05-21 01:10"
   priority: 1
   group: "single"
 
