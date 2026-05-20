@@ -1,0 +1,18 @@
+# articles.yaml
+- id: "abcdef1234567890xxxx"
+  title: "Gitの使い方"             # メモ用（なくても可）
+  publish_at: "2026-05-25 10:00"  # 日本時間(JST)で指定
+  priority: 1                    # 優先度
+  group: "git-series"            # まとまりリスト名
+
+- id: "1234567890abcdefxxxx"
+  title: "GitHub Actions入門"
+  publish_at: "2026-05-25 10:00"  # 同じ日時に複数指定も可能
+  priority: 2
+  group: "git-series"
+
+- id: "9876543210fedcbaxxxx"
+  title: "全く別の単発記事"
+  publish_at: "2026-06-01 18:00"
+  priority: 1
+  group: "single"
